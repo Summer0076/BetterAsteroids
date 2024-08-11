@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://7tc5ah7ej61o"]
+
+[ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_ermog"]
+[ext_resource type="Texture2D" uid="uid://83xuxwym8cfu" path="res://Textures/ship/ship_d/ship-d1.png" id="1_qmvp4"]
+[ext_resource type="PackedScene" uid="uid://do28aou0e408j" path="res://Scenes/Projectile/Projectile.tscn" id="2_cl627"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_leypp"]
+radius = 17.0294
+
+[node name="Player" type="CharacterBody2D"]
+z_index = 1
+collision_mask = 0
+script = ExtResource("1_ermog")
+projectile_scene = ExtResource("2_cl627")
+teleport_distance = 1500
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 4.71239
+texture = ExtResource("1_qmvp4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_leypp")
+metadata/_edit_lock_ = true
+
+[node name="SpawnProjectile" type="Marker2D" parent="."]
+position = Vector2(16, 0)
+
+[node name="DashTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]

@@ -1,0 +1,123 @@
+[gd_scene load_steps=9 format=3 uid="uid://7mrja5hc62t2"]
+
+[ext_resource type="Texture2D" uid="uid://jravdqkg0scf" path="res://Textures/Screen/backround.png" id="1_l1ryd"]
+[ext_resource type="Script" path="res://Scenes/Level/Level.gd" id="1_wjb1x"]
+[ext_resource type="PackedScene" uid="uid://7tc5ah7ej61o" path="res://Scenes/Player/player.tscn" id="2_33784"]
+[ext_resource type="Script" path="res://Scenes/Level/ProjectileFactory.gd" id="3_u3cmd"]
+[ext_resource type="PackedScene" uid="uid://pokk2y31wij8" path="res://Scenes/Asteroid/Asteroid.tscn" id="4_iemjd"]
+[ext_resource type="Script" path="res://Scenes/Level/SpawnTimer.gd" id="6_x5pgc"]
+[ext_resource type="PackedScene" uid="uid://b10ayuw5xeyub" path="res://Scenes/HUD/In_Game/In_Game.tscn" id="7_6oodn"]
+[ext_resource type="PackedScene" uid="uid://b38pdekm3xh16" path="res://Scenes/HUD/Pause_Menu/Pause_Menu.tscn" id="8_x6s3t"]
+
+[node name="Level" type="Node"]
+script = ExtResource("1_wjb1x")
+asteroid_scene = ExtResource("4_iemjd")
+asteroid_direction_variance = 25.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_l1ryd")
+metadata/_edit_lock_ = true
+
+[node name="Player" parent="." instance=ExtResource("2_33784")]
+position = Vector2(240, 135)
+teleport_distance = 100
+lerp_rotation = 0.15
+metadata/_edit_lock_ = true
+
+[node name="ProjectileFactory" type="Node2D" parent="."]
+script = ExtResource("3_u3cmd")
+metadata/_edit_lock_ = true
+
+[node name="Asteroids" type="Node2D" parent="."]
+unique_name_in_owner = true
+metadata/_edit_lock_ = true
+
+[node name="SpawnTimer" type="Timer" parent="Asteroids"]
+autostart = true
+script = ExtResource("6_x5pgc")
+
+[node name="BorderLayer" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="BorderLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = -20
+theme_override_constants/margin_top = -20
+theme_override_constants/margin_right = -20
+theme_override_constants/margin_bottom = -20
+metadata/_edit_lock_ = true
+
+[node name="BorderRect" type="ReferenceRect" parent="BorderLayer/MarginContainer"]
+unique_name_in_owner = true
+editor_description = "Permet de delimité un espace seulement dans l'editeur
+"
+layout_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="GameoverLayer" type="CanvasLayer" parent="."]
+
+[node name="Gameover" type="Control" parent="GameoverLayer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="CenterContainer" type="CenterContainer" parent="GameoverLayer/Gameover"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="Gameover" type="VBoxContainer" parent="GameoverLayer/Gameover/CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 5
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="GameoverLayer/Gameover/CenterContainer/Gameover"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 45
+text = "GAMEOVER"
+
+[node name="RetryButton" type="Button" parent="GameoverLayer/Gameover/CenterContainer/Gameover"]
+custom_minimum_size = Vector2(110, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 35
+text = "Retry"
+
+[node name="MenuButton" type="Button" parent="GameoverLayer/Gameover/CenterContainer/Gameover"]
+custom_minimum_size = Vector2(110, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Menu"
+
+[node name="InGame" parent="." instance=ExtResource("7_6oodn")]
+
+[node name="PauseMenu" parent="." instance=ExtResource("8_x6s3t")]
+unique_name_in_owner = true
+visible = false
+z_index = 1
+
+[connection signal="destroyed" from="Player" to="." method="_on_player_destroyed"]
+[connection signal="projectile_fired" from="Player" to="ProjectileFactory" method="spawn_projectile"]
+[connection signal="timeout" from="Asteroids/SpawnTimer" to="." method="_on_spawn_timer_timeout"]
+[connection signal="timeout" from="Asteroids/SpawnTimer" to="Asteroids/SpawnTimer" method="_on_timeout"]
+[connection signal="pressed" from="GameoverLayer/Gameover/CenterContainer/Gameover/RetryButton" to="." method="_on_retry_button_pressed"]
+[connection signal="pressed" from="GameoverLayer/Gameover/CenterContainer/Gameover/MenuButton" to="." method="_on_menu_button_pressed"]

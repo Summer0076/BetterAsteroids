@@ -1,0 +1,66 @@
+[gd_scene load_steps=6 format=3 uid="uid://cipy81abrfx8q"]
+
+[ext_resource type="Texture2D" uid="uid://fvv4v7wgn3io" path="res://Textures/Screen/Skin_Menu.png" id="1_4sy8o"]
+[ext_resource type="Script" path="res://Scenes/Skin/Skin.gd" id="1_ip2qm"]
+[ext_resource type="Texture2D" uid="uid://d2rbw83x4b7f2" path="res://Textures/ship/ship-a/ship-a1.png" id="3_eg84d"]
+[ext_resource type="PackedScene" uid="uid://7tc5ah7ej61o" path="res://Scenes/Player/player.tscn" id="4_winxq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6va55"]
+
+[node name="Skin" type="Node"]
+script = ExtResource("1_ip2qm")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_4sy8o")
+metadata/_edit_lock_ = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 32.0
+offset_top = 25.0
+offset_right = 96.0
+offset_bottom = 105.0
+color = Color(0, 0.756863, 0.34902, 1)
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 59.0
+offset_bottom = 75.0
+color = Color(0, 0.839216, 0.266667, 1)
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect/ColorRect"]
+layout_mode = 0
+offset_right = 54.0
+offset_bottom = 35.0
+color = Color(0, 0.670588, 0.909804, 0.784314)
+
+[node name="Ship-a1" type="Sprite2D" parent="ColorRect/ColorRect"]
+position = Vector2(27, 17)
+texture = ExtResource("3_eg84d")
+
+[node name="Ship-a" type="Button" parent="ColorRect/ColorRect"]
+layout_mode = 0
+offset_top = 35.0
+offset_right = 54.0
+offset_bottom = 70.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_6va55")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_6va55")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_6va55")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_6va55")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6va55")
+text = "Select"
+
+[node name="Player" parent="." instance=ExtResource("4_winxq")]
+position = Vector2(211, 149)
+max_speed = null
+lerp_velocity = null
+lerp_rotation = null
+
+[connection signal="change_skin" from="." to="Player" method="_on_skin_change_skin"]
+[connection signal="pressed" from="ColorRect/ColorRect/Ship-a" to="." method="_on_shipa_pressed"]

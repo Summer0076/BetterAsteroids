@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://7tc5ah7ej61o"]
+
+[ext_resource type="Script" path="res://Scenes/player.gd" id="1_ermog"]
+[ext_resource type="Texture2D" uid="uid://83xuxwym8cfu" path="res://Textures/ship-d/ship-d1.png" id="1_qmvp4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_leypp"]
+radius = 17.0294
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_ermog")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_qmvp4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_leypp")

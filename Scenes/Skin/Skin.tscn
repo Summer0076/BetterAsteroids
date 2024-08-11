@@ -1,0 +1,224 @@
+[gd_scene load_steps=20 format=3 uid="uid://cipy81abrfx8q"]
+
+[ext_resource type="Script" path="res://Scenes/Skin/Skin.gd" id="1_ip2qm"]
+[ext_resource type="Texture2D" uid="uid://cmywgy408iclb" path="res://Textures/Screen/Skin_Menu_V3.png" id="2_0ce8m"]
+[ext_resource type="Texture2D" uid="uid://c85ag3bcrrqyl" path="res://Textures/Screen/Skin_cards.png" id="3_tpueu"]
+[ext_resource type="Texture2D" uid="uid://cpcqdlotqhda3" path="res://Textures/Bullet/bullet/bullet1.png" id="4_3blij"]
+[ext_resource type="Texture2D" uid="uid://dwfodjmmqf7gh" path="res://Textures/Bullet/Bullet-e/bullet-e1.png" id="4_4m482"]
+[ext_resource type="Texture2D" uid="uid://83xuxwym8cfu" path="res://Textures/ship/ship_d/ship-d1.png" id="4_78opb"]
+[ext_resource type="Texture2D" uid="uid://cnrs17lhc2vri" path="res://Textures/Bullet/bullet/bullet2.png" id="5_2sbsw"]
+[ext_resource type="Texture2D" uid="uid://b3dcpe0c3vgj7" path="res://Textures/Bullet/Bullet-e/bullet-e2.png" id="5_kir4n"]
+[ext_resource type="Texture2D" uid="uid://doyni3chum6u1" path="res://Textures/Bullet/Bullet-e/bullet-e3.png" id="6_4lcie"]
+[ext_resource type="Texture2D" uid="uid://cayrcmoohaj71" path="res://Textures/Bullet/Bullet-b/bullet-b1.png" id="6_o6plv"]
+[ext_resource type="Texture2D" uid="uid://c67ckl8ya3s3c" path="res://Textures/Bullet/Bullet-b/bullet-b2.png" id="7_m45db"]
+[ext_resource type="Texture2D" uid="uid://ciey33e1c3m7y" path="res://Textures/Bullet/Bullet-e/bullet-e4.png" id="7_o1gx4"]
+[ext_resource type="Texture2D" uid="uid://b7vv1svcqmh7h" path="res://Textures/Bullet/Bullet-c/bullet-c1.png" id="8_o751x"]
+[ext_resource type="Texture2D" uid="uid://br1qqffitdgre" path="res://Textures/Bullet/Bullet-c/bullet-c2.png" id="9_3f5r7"]
+[ext_resource type="Texture2D" uid="uid://bwlttmuo5lbpg" path="res://Textures/Bullet/Bullet-d/bullet-d1.png" id="10_inur7"]
+[ext_resource type="Texture2D" uid="uid://cfdpfr6cq1ywx" path="res://Textures/Bullet/Bullet-d/bullet-d2.png" id="11_lkebn"]
+[ext_resource type="Texture2D" uid="uid://eknoohkk3g4c" path="res://Textures/Bullet/Bullet-d/bullet-d3.png" id="12_j62hc"]
+[ext_resource type="Texture2D" uid="uid://dg3orruehk4br" path="res://Textures/Bullet/Bullet-d/bullet-d4.png" id="13_h6ask"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3k6d5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_3blij")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2sbsw")
+}],
+"loop": true,
+"name": &"Bullet_a",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_o6plv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_m45db")
+}],
+"loop": true,
+"name": &"Bullet_b",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_o751x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_3f5r7")
+}],
+"loop": true,
+"name": &"Bullet_c",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_inur7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_lkebn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_j62hc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_h6ask")
+}],
+"loop": true,
+"name": &"Bullet_d",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_4m482")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_kir4n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_4lcie")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_o1gx4")
+}],
+"loop": true,
+"name": &"Bullet_e",
+"speed": 10.0
+}]
+
+[node name="Skin" type="Node"]
+script = ExtResource("1_ip2qm")
+
+[node name="Background" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_0ce8m")
+metadata/_edit_lock_ = true
+
+[node name="Ship" type="TextureRect" parent="Background"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 100.0
+offset_top = -95.0
+offset_right = 230.0
+offset_bottom = 97.0
+grow_vertical = 2
+texture = ExtResource("3_tpueu")
+
+[node name="SelectShip" type="Label" parent="Background/Ship"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 131.0
+offset_right = 124.0
+offset_bottom = 186.0
+theme_override_font_sizes/font_size = 11
+text = "Select your Ship"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="ShipButton" type="OptionButton" parent="Background/Ship/SelectShip"]
+layout_mode = 0
+offset_top = -30.0
+offset_right = 118.0
+offset_bottom = -6.0
+item_count = 6
+popup/item_0/text = "Ship_a"
+popup/item_0/id = 0
+popup/item_1/text = "Ship_b"
+popup/item_1/id = 1
+popup/item_2/text = "Ship_c"
+popup/item_2/id = 2
+popup/item_3/text = "Ship_d"
+popup/item_3/id = 3
+popup/item_4/text = "Ship_e"
+popup/item_4/id = 4
+popup/item_5/text = "ship_f"
+popup/item_5/id = 5
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D_Ship" type="Sprite2D" parent="Background/Ship/SelectShip"]
+unique_name_in_owner = true
+position = Vector2(59, -80)
+rotation = -1.5708
+scale = Vector2(1.85, 1.85)
+texture = ExtResource("4_78opb")
+metadata/_edit_lock_ = true
+
+[node name="Bullets" type="TextureRect" parent="Background"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -230.0
+offset_top = -96.0
+offset_right = -100.0
+offset_bottom = 96.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("3_tpueu")
+
+[node name="SelectBullet" type="Label" parent="Background/Bullets"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 131.0
+offset_right = 124.0
+offset_bottom = 186.0
+theme_override_font_sizes/font_size = 11
+text = "Select your Bullets"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="BulletButton" type="OptionButton" parent="Background/Bullets/SelectBullet"]
+layout_mode = 0
+offset_top = -30.0
+offset_right = 118.0
+offset_bottom = -6.0
+item_count = 5
+popup/item_0/text = "Bullet_a"
+popup/item_0/id = 0
+popup/item_1/text = "Bullet_b"
+popup/item_1/id = 1
+popup/item_2/text = "Bullet_c"
+popup/item_2/id = 2
+popup/item_3/text = "Bullet_d"
+popup/item_3/id = 3
+popup/item_4/text = "Bullet_e"
+popup/item_4/id = 4
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D_Bullets" type="AnimatedSprite2D" parent="Background/Bullets/SelectBullet"]
+unique_name_in_owner = true
+position = Vector2(59, -80)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_3k6d5")
+animation = &"Bullet_e"
+autoplay = "Bullet_e"
+metadata/_edit_lock_ = true
+
+[node name="BackButton" type="Button" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -53.0
+offset_top = 5.0
+offset_right = -5.0
+offset_bottom = 29.0
+grow_horizontal = 0
+size_flags_horizontal = 8
+text = "Back"
+
+[connection signal="item_selected" from="Background/Ship/SelectShip/ShipButton" to="." method="_on_ship_button_item_selected"]
+[connection signal="item_selected" from="Background/Bullets/SelectBullet/BulletButton" to="." method="_on_bullet_button_item_selected"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

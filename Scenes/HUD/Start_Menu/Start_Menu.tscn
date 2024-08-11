@@ -1,0 +1,115 @@
+[gd_scene load_steps=5 format=3 uid="uid://47dt4bepia2s"]
+
+[ext_resource type="Script" path="res://Scenes/HUD/Start_Menu/Start_Menu.gd" id="1_0t7vl"]
+[ext_resource type="Texture2D" uid="uid://dvxvu4ynfoefx" path="res://Textures/Screen/Start_Menu.png" id="2_gy17q"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h8c2w"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j0xs7"]
+
+[node name="Menu" type="Node"]
+script = ExtResource("1_0t7vl")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_gy17q")
+metadata/_edit_lock_ = true
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -74.0
+offset_top = -20.0
+offset_right = 30.0
+offset_bottom = 38.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 5
+
+[node name="ButtonPlay" type="Button" parent="Control/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.687215, 0.687215, 0.687215, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_h8c2w")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_h8c2w")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_h8c2w")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_h8c2w")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_h8c2w")
+text = "PLAY"
+metadata/_edit_lock_ = true
+
+[node name="ButtonSkin" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.686275, 0.686275, 0.686275, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_j0xs7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_j0xs7")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_j0xs7")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_j0xs7")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_j0xs7")
+text = "Skins"
+metadata/_edit_lock_ = true
+
+[node name="ButtonCredits" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.686275, 0.686275, 0.686275, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_j0xs7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_j0xs7")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_j0xs7")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_j0xs7")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_j0xs7")
+text = "Credits"
+metadata/_edit_lock_ = true
+
+[node name="ButtonQuit" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.686275, 0.686275, 0.686275, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_j0xs7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_j0xs7")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_j0xs7")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_j0xs7")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_j0xs7")
+text = "Quit"
+metadata/_edit_lock_ = true
+
+[node name="HighscoreLabel" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 65.0
+offset_bottom = 26.0
+theme_override_font_sizes/font_size = 10
+text = "Highscore :"
+
+[node name="HighscoreValue" type="Label" parent="Control/HighscoreLabel"]
+layout_mode = 0
+offset_left = 60.0
+offset_right = 100.0
+offset_bottom = 16.0
+theme_override_font_sizes/font_size = 10
+text = "0"
+
+[connection signal="pressed" from="Control/VBoxContainer/ButtonPlay" to="." method="_on_button_play_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/ButtonSkin" to="." method="_on_button_skin_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/ButtonCredits" to="." method="_on_button_credits_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/ButtonQuit" to="." method="_on_button_quit_pressed"]
