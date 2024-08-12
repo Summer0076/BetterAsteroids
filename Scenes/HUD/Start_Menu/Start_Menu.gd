@@ -15,10 +15,10 @@ func _on_button_skin_pressed():
 	get_tree().change_scene_to_file("res://Scenes/Skin/Skin.tscn")
 
 func _on_button_settings_pressed():
-	get_tree().change_scene_to_file("res://Scenes/Skin/Skin.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Settings/Settings.tscn")
 
 func _on_button_credits_pressed():
-	get_tree().change_scene_to_file("res://Scenes/Settings/Settings.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Credits/Credits.tscn")
 	
 func _on_button_quit_pressed():
 	get_tree().quit()

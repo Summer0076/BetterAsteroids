@@ -1,3 +1,108 @@
-[gd_scene format=3 uid="uid://cqhxuyip8x7rn"]
+[gd_scene load_steps=3 format=3 uid="uid://cqhxuyip8x7rn"]
 
-[node name="Settings" type="Node2D"]
+[ext_resource type="Script" path="res://Scenes/Settings/Settings.gd" id="1_vg6gg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ixqgd"]
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_vg6gg")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_right = 480.0
+offset_bottom = 34.0
+grow_horizontal = 2
+color = Color(0, 0.48682, 0.48796, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -240.0
+offset_right = 240.0
+offset_bottom = 34.0
+grow_horizontal = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/CenterContainer"]
+layout_mode = 2
+
+[node name="KeybindsButton" type="Button" parent="ColorRect/CenterContainer/HBoxContainer"]
+layout_mode = 2
+text = "Keybinds"
+
+[node name="AudioButton" type="Button" parent="ColorRect/CenterContainer/HBoxContainer"]
+layout_mode = 2
+text = "Audio"
+
+[node name="VideoButton" type="Button" parent="ColorRect/CenterContainer/HBoxContainer"]
+layout_mode = 2
+text = "Video"
+
+[node name="BackButton" type="Button" parent="."]
+z_index = 1
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 435.0
+offset_top = 5.0
+offset_right = 475.0
+offset_bottom = 29.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ixqgd")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ixqgd")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ixqgd")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ixqgd")
+text = "Back"
+metadata/_edit_lock_ = true
+
+[node name="VideoBackground" type="ColorRect" parent="."]
+visible = false
+z_index = -1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_top = 34.0
+offset_right = 480.0
+offset_bottom = 270.0
+grow_horizontal = 2
+color = Color(0.112675, 0.284779, 0, 1)
+
+[node name="AudioBackground" type="ColorRect" parent="."]
+visible = false
+z_index = -1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_top = 34.0
+offset_right = 480.0
+offset_bottom = 270.0
+grow_horizontal = 2
+color = Color(0.142922, 0.16959, 0.560147, 1)
+
+[node name="KeybindsBackgroud" type="ColorRect" parent="."]
+visible = false
+z_index = -1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_top = 34.0
+offset_right = 480.0
+offset_bottom = 270.0
+grow_horizontal = 2
+color = Color(0.442489, 7.21961e-07, 0.25693, 1)
+
+[connection signal="pressed" from="ColorRect/CenterContainer/HBoxContainer/KeybindsButton" to="." method="_on_keybinds_button_pressed"]
+[connection signal="pressed" from="ColorRect/CenterContainer/HBoxContainer/AudioButton" to="." method="_on_audio_button_pressed"]
+[connection signal="pressed" from="ColorRect/CenterContainer/HBoxContainer/VideoButton" to="." method="_on_video_button_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
