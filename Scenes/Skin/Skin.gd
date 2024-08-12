@@ -17,7 +17,9 @@ var skin_projectile_array = [
 	"Bullet_e",
 ]
 
-
+func _ready():
+	Global.pauseable = false
+	
 
 func _on_back_button_pressed():
 	get_tree().change_scene_to_file("res://Scenes/HUD/Start_Menu/Start_Menu.tscn")

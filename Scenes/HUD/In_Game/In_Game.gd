@@ -8,6 +8,7 @@ var Score = 0
 
 func _ready():
 	score_nb.text = str(Score)
+	Global.pauseable = true
 
 func _physics_process(_delta):
 	score_nb.text = str(Score)

@@ -7,6 +7,7 @@ var screen_size = Vector2(screen_width, screen_height)
 
 var paused = false 
 
+
 @onready var asteroids_container : Node2D = %Asteroids
 @onready var border_rect = %BorderRect
 @onready var gameover = %Gameover
@@ -14,28 +15,15 @@ var paused = false
 @onready var in_game = $InGame
 @onready var pause_menu = $PauseMenu
 @onready var player = $Player
+@onready var pause_layer = $PauseLayer
 
 @export var asteroid_scene : PackedScene
 @export var spawn_circle_radius : float = 350.0
 @export var asteroid_direction_variance = 45.0
 
+func _ready():
+	Global.game_paused.connect(_on_game_paused)
 
-func _process(_delta):
-	if Input.is_action_just_pressed("Pause"):
-		PauseMenu()
-		
-func PauseMenu():
-	if paused:
-		pause_menu.hide()
-		Engine.time_scale = 1
-		$Player.bCanFire = true
-		$Player.bCanDash = true
-	else:
-		pause_menu.show()
-		Engine.time_scale = 0
-		$Player.bCanFire = false
-		$Player.bCanDash = false
-	paused = !paused
 
 func spawn_asteroid_on_border() -> void:
 	var screen_center = screen_size / 2.0 
@@ -91,6 +79,7 @@ func _on_spawn_timer_timeout() -> void:
 func _on_retry_button_pressed() -> void:
 	get_tree().reload_current_scene()
 	Global.reset_Kill()
+	Global.reset_paused() 
 	
 func _on_player_destroyed() -> void:
 	gameover.show()
@@ -100,3 +89,10 @@ func _on_player_destroyed() -> void:
 func _on_menu_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/HUD/Start_Menu/Start_Menu.tscn")
 	Global.reset_Kill()
+
+func _on_game_paused():
+	if Global.Pause_Showing == false:
+		pause_layer.show()
+	else:
+		pause_layer.hide()
+	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://7mrja5hc62t2"]
+[gd_scene load_steps=9 format=3 uid="uid://7mrja5hc62t2"]
 
 [ext_resource type="Texture2D" uid="uid://jravdqkg0scf" path="res://Textures/Screen/backround.png" id="1_l1ryd"]
 [ext_resource type="Script" path="res://Scenes/Level/Level.gd" id="1_wjb1x"]
@@ -8,12 +8,6 @@
 [ext_resource type="Script" path="res://Scenes/Level/SpawnTimer.gd" id="6_x5pgc"]
 [ext_resource type="PackedScene" uid="uid://b10ayuw5xeyub" path="res://Scenes/HUD/In_Game/In_Game.tscn" id="7_6oodn"]
 [ext_resource type="PackedScene" uid="uid://b38pdekm3xh16" path="res://Scenes/HUD/Pause_Menu/Pause_Menu.tscn" id="8_x6s3t"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rq7ep"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mgr3b"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rq157"]
 
 [node name="Level" type="Node"]
 script = ExtResource("1_wjb1x")
@@ -30,7 +24,6 @@ texture = ExtResource("1_l1ryd")
 metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("2_33784")]
-unique_name_in_owner = true
 position = Vector2(240, 135)
 teleport_distance = 100
 lerp_rotation = 0.15
@@ -49,7 +42,6 @@ autostart = true
 script = ExtResource("6_x5pgc")
 
 [node name="BorderLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="MarginContainer" type="MarginContainer" parent="BorderLayer"]
 anchors_preset = 15
@@ -71,7 +63,6 @@ layout_mode = 2
 metadata/_edit_lock_ = true
 
 [node name="GameoverLayer" type="CanvasLayer" parent="."]
-process_mode = 3
 
 [node name="Gameover" type="Control" parent="GameoverLayer"]
 unique_name_in_owner = true
@@ -101,50 +92,28 @@ metadata/_edit_lock_ = true
 [node name="Label" type="Label" parent="GameoverLayer/Gameover/CenterContainer/Gameover"]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 45
 text = "GAMEOVER"
 
 [node name="RetryButton" type="Button" parent="GameoverLayer/Gameover/CenterContainer/Gameover"]
 custom_minimum_size = Vector2(110, 0)
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(0.639216, 0.698039, 0.741176, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
-theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 25
-theme_override_styles/normal = SubResource("StyleBoxEmpty_rq7ep")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_rq7ep")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_rq7ep")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_rq7ep")
+theme_override_font_sizes/font_size = 35
 text = "Retry"
 
 [node name="MenuButton" type="Button" parent="GameoverLayer/Gameover/CenterContainer/Gameover"]
 custom_minimum_size = Vector2(110, 0)
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(0.639216, 0.698039, 0.741176, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
-theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 15
-theme_override_styles/normal = SubResource("StyleBoxEmpty_mgr3b")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_mgr3b")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_mgr3b")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_rq157")
 text = "Menu"
 
-[node name="PauseLayer" type="CanvasLayer" parent="."]
+[node name="InGame" parent="." instance=ExtResource("7_6oodn")]
+
+[node name="PauseMenu" parent="." instance=ExtResource("8_x6s3t")]
 unique_name_in_owner = true
 visible = false
-
-[node name="PauseMenu" parent="PauseLayer" instance=ExtResource("8_x6s3t")]
-unique_name_in_owner = true
 z_index = 1
-
-[node name="InGame" parent="." instance=ExtResource("7_6oodn")]
 
 [connection signal="destroyed" from="Player" to="." method="_on_player_destroyed"]
 [connection signal="projectile_fired" from="Player" to="ProjectileFactory" method="spawn_projectile"]
