@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://pokk2y31wij8"]
+[gd_scene load_steps=13 format=3 uid="uid://pokk2y31wij8"]
 
 [ext_resource type="Script" path="res://Scenes/Asteroid/Asteroid.gd" id="1_me2o8"]
 [ext_resource type="Script" path="res://Scenes/Resources/AsteroidSize/AsteroidSize.gd" id="2_h4nuw"]
 [ext_resource type="Texture2D" uid="uid://jqxg6ok0dmli" path="res://Textures/Asteroids/big-a.png" id="3_gynym"]
 [ext_resource type="Texture2D" uid="uid://7ycmb8jlm3ls" path="res://Textures/Asteroids/med-a.png" id="4_at2fe"]
 [ext_resource type="Texture2D" uid="uid://dacj04sgw2pbk" path="res://Textures/Asteroids/small-a.png" id="5_haks0"]
+[ext_resource type="AudioStream" uid="uid://bo8rsyb6f82s0" path="res://Textures/Audio/Explosion.mp3" id="6_d5a81"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6fc8u"]
 radius = 7.0
@@ -41,5 +42,10 @@ texture = ExtResource("5_haks0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_6fc8u")
+
+[node name="Destroy_sound" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("6_d5a81")
+volume_db = -14.4
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://47dt4bepia2s"]
+[gd_scene load_steps=6 format=3 uid="uid://47dt4bepia2s"]
 
 [ext_resource type="Script" path="res://Scenes/HUD/Start_Menu/Start_Menu.gd" id="1_0t7vl"]
 [ext_resource type="Texture2D" uid="uid://dvxvu4ynfoefx" path="res://Textures/Screen/Start_Menu.png" id="2_gy17q"]
+[ext_resource type="Theme" uid="uid://bmr2n05mc6trg" path="res://Data/Button_Theme.tres" id="3_4uo84"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h8c2w"]
 
@@ -47,6 +48,7 @@ metadata/_edit_lock_ = true
 [node name="ButtonPlay" type="Button" parent="Control/VBoxContainer"]
 texture_filter = 1
 layout_mode = 2
+theme = ExtResource("3_4uo84")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(0.639216, 0.698039, 0.741176, 1)
 theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
@@ -60,6 +62,7 @@ text = "PLAY"
 
 [node name="ButtonSkin" type="Button" parent="Control/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("3_4uo84")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(0.639216, 0.698039, 0.741176, 1)
 theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
@@ -73,6 +76,7 @@ text = "Skins"
 
 [node name="ButtonSettings" type="Button" parent="Control/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("3_4uo84")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(0.639216, 0.698039, 0.741176, 1)
 theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
@@ -86,6 +90,7 @@ text = "Settings"
 
 [node name="ButtonCredits" type="Button" parent="Control/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("3_4uo84")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(0.639216, 0.698039, 0.741176, 1)
 theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
@@ -99,6 +104,7 @@ text = "Credits"
 
 [node name="ButtonQuit" type="Button" parent="Control/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("3_4uo84")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(0.639216, 0.698039, 0.741176, 1)
 theme_override_colors/font_focus_color = Color(1, 1, 1, 1)

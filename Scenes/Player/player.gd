@@ -31,6 +31,7 @@ signal destroyed
 
 func _ready():
 	Sprite.texture = load(Global.skin)
+	$Fire_sound.volume_db = Global.Env_Volume
 
 func Input_Movements() -> void:
 	direction = Input.get_vector("Left", "Right", "Up", "Down")
@@ -53,6 +54,7 @@ func Input_Movements() -> void:
 
 func fire() -> void:
 	if bCanFire == true:
+		$Fire_sound.play()
 		var projectile = projectile_scene.instantiate()
 		projectile.position = SpawnProjectile.global_position
 		projectile.rotation = rotation
@@ -89,6 +91,6 @@ func _physics_process(_delta) -> void:
 func destroy() -> void:
 	destroyed.emit()
 	queue_free()
-
+	
 func _on_dash_timer_timeout():
 	bCanDash = true

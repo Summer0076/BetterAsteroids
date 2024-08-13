@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cu6nngbixjpn1"]
+
+[ext_resource type="AudioStream" uid="uid://duk38b35pbgth" path="res://Textures/Music/Nesquence.mp3" id="1_bt8a6"]
+[ext_resource type="Script" path="res://music.gd" id="2_fy5nf"]
+
+[node name="Music" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_bt8a6")
+volume_db = -80.0
+autoplay = true
+max_distance = 2e+06
+script = ExtResource("2_fy5nf")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://7mrja5hc62t2"]
+[gd_scene load_steps=13 format=3 uid="uid://7mrja5hc62t2"]
 
 [ext_resource type="Texture2D" uid="uid://jravdqkg0scf" path="res://Textures/Screen/backround.png" id="1_l1ryd"]
 [ext_resource type="Script" path="res://Scenes/Level/Level.gd" id="1_wjb1x"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://Scenes/Level/SpawnTimer.gd" id="6_x5pgc"]
 [ext_resource type="PackedScene" uid="uid://b10ayuw5xeyub" path="res://Scenes/HUD/In_Game/In_Game.tscn" id="7_6oodn"]
 [ext_resource type="PackedScene" uid="uid://b38pdekm3xh16" path="res://Scenes/HUD/Pause_Menu/Pause_Menu.tscn" id="8_x6s3t"]
+[ext_resource type="PackedScene" uid="uid://cu6nngbixjpn1" path="res://music.tscn" id="9_gdbam"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rq7ep"]
 
@@ -145,6 +146,8 @@ unique_name_in_owner = true
 z_index = 1
 
 [node name="InGame" parent="." instance=ExtResource("7_6oodn")]
+
+[node name="Music" parent="." instance=ExtResource("9_gdbam")]
 
 [connection signal="destroyed" from="Player" to="." method="_on_player_destroyed"]
 [connection signal="projectile_fired" from="Player" to="ProjectileFactory" method="spawn_projectile"]

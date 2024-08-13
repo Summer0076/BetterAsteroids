@@ -13,7 +13,6 @@ var paused = false
 @onready var gameover = %Gameover
 @onready var asteroid_timer = $Asteroids/SpawnTimer
 @onready var in_game = $InGame
-@onready var pause_menu = $PauseMenu
 @onready var player = $Player
 @onready var pause_layer = $PauseLayer
 
@@ -23,7 +22,6 @@ var paused = false
 
 func _ready():
 	Global.game_paused.connect(_on_game_paused)
-
 
 func spawn_asteroid_on_border() -> void:
 	var screen_center = screen_size / 2.0 

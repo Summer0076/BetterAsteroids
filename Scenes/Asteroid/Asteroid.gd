@@ -33,11 +33,10 @@ signal destroyed
 func _ready() -> void:
 	if Engine.is_editor_hint():
 		set_physics_process(false)
-		
 	size_changed.connect(update_size)
-	
 	update_size()
-
+	%Destroy_sound.volume_db = Global.Env_Volume
+	
 
 func _physics_process(delta : float) -> void:
 	var velocity = speed * direction * delta
@@ -61,3 +60,4 @@ func destroy() -> void:
 
 func _on_body_entered(body : Player):
 	body.destroy()
+	%Destroy_sound.play()

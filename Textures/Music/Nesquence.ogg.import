@@ -2,7 +2,7 @@
 
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
-uid="uid://dvf8cb3u2f12k"
+uid="uid://crp2iu6wjphcb"
 path="res://.godot/imported/Nesquence.ogg-50ad49dc63891cbeb9d7b2cf6b1d862e.oggvorbisstr"
 
 [deps]
@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/Nesquence.ogg-50ad49dc63891cbeb9d7b2cf6b1d862
 [params]
 
 loop=false
-loop_offset=0
-bpm=0
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4
