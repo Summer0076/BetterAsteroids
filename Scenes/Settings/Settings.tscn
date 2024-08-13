@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scenes/Settings/Settings.gd" id="1_vg6gg"]
 [ext_resource type="Texture2D" uid="uid://cfjc8efjb02df" path="res://Textures/Screen/Settings_Menu_part2_V2.png" id="2_p4w0i"]
-[ext_resource type="PackedScene" uid="uid://cu6nngbixjpn1" path="res://music.tscn" id="2_pqika"]
+[ext_resource type="PackedScene" uid="uid://cu6nngbixjpn1" path="res://Scenes/Music/music.tscn" id="2_pqika"]
 [ext_resource type="Theme" uid="uid://bmr2n05mc6trg" path="res://Data/Button_Theme.tres" id="3_cm1xs"]
 [ext_resource type="Texture2D" uid="uid://bpbwiaycl6my5" path="res://Textures/Screen/Settings_Menu_V3.png" id="3_pmx0c"]
 
@@ -161,6 +161,7 @@ texture = ExtResource("3_pmx0c")
 metadata/_edit_lock_ = true
 
 [node name="RightLabel" type="Label" parent="KeybindsBackgroud"]
+layout_mode = 0
 offset_left = 15.0
 offset_top = 15.0
 offset_right = 187.0
@@ -180,6 +181,7 @@ vertical_alignment = 1
 metadata/_edit_lock_ = true
 
 [node name="LeftLabel" type="Label" parent="KeybindsBackgroud"]
+layout_mode = 0
 offset_left = 15.0
 offset_top = 45.0
 offset_right = 187.0
@@ -199,6 +201,7 @@ vertical_alignment = 1
 metadata/_edit_lock_ = true
 
 [node name="UpLabel" type="Label" parent="KeybindsBackgroud"]
+layout_mode = 0
 offset_left = 15.0
 offset_top = 75.0
 offset_right = 187.0
@@ -218,6 +221,7 @@ vertical_alignment = 1
 metadata/_edit_lock_ = true
 
 [node name="DownLabel" type="Label" parent="KeybindsBackgroud"]
+layout_mode = 0
 offset_left = 15.0
 offset_top = 105.0
 offset_right = 187.0
@@ -237,6 +241,7 @@ vertical_alignment = 1
 metadata/_edit_lock_ = true
 
 [node name="ShootLabel" type="Label" parent="KeybindsBackgroud"]
+layout_mode = 0
 offset_left = 15.0
 offset_top = 135.0
 offset_right = 187.0
@@ -255,6 +260,7 @@ vertical_alignment = 1
 metadata/_edit_lock_ = true
 
 [node name="ImpulseLabel" type="Label" parent="KeybindsBackgroud"]
+layout_mode = 0
 offset_left = 15.0
 offset_top = 165.0
 offset_right = 187.0

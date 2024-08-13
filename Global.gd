@@ -4,7 +4,7 @@ var save_data:SaveData
 
 var skin = "res://Textures/ship/ship_d/ship-d1.png"
 var projectile_skin = "Bullet_e"
-var high_score = 0
+var score = 0
 var Kill = 0
 
 var paused = false 
@@ -32,7 +32,6 @@ func _ready():
 	
 	resume_pressed.connect(reset_paused)
 
-	
 func _process(_delta):
 	if Input.is_action_just_pressed("Pause") && pauseable == true:
 		game_paused.emit()
@@ -40,11 +39,16 @@ func _process(_delta):
 	if Music_Volume != -14.4:
 		save_volume()
 		
-func update_high_score():
-	if save_data.high_score < Kill:
-		save_data.high_score = Kill
+func update_Kill_score():
+	if save_data.Kill < Kill:
+		save_data.Kill = Kill
 		save_data.save()
 
+func update_high_score():
+	if save_data.high_score < score:
+		save_data.high_score = score
+		save_data.save()
+	
 func save_skins():
 	save_data.Ship_Skin = skin
 	save_data.Bullets_Skin = projectile_skin

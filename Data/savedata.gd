@@ -1,6 +1,8 @@
 class_name SaveData extends Resource
 
 @export var high_score:int = 0
+@export var Kill:int = 0
+
 @export var Ship_Skin = "res://Textures/ship/ship_d/ship-d1.png"
 @export var Bullets_Skin = "Bullet_e"
 @export var Volume_Music:float = -14.4

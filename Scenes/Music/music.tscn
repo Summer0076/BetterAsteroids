@@ -1,10 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://cu6nngbixjpn1"]
 
 [ext_resource type="AudioStream" uid="uid://duk38b35pbgth" path="res://Textures/Music/Nesquence.mp3" id="1_bt8a6"]
-[ext_resource type="Script" path="res://music.gd" id="2_fy5nf"]
+[ext_resource type="Script" path="res://Scenes/Music/music.gd" id="2_qwn8i"]
 
 [node name="Music" type="AudioStreamPlayer"]
 stream = ExtResource("1_bt8a6")
 volume_db = -14.4
 autoplay = true
-script = ExtResource("2_fy5nf")
+script = ExtResource("2_qwn8i")

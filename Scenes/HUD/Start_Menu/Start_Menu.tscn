@@ -29,23 +29,57 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_lock_ = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+[node name="KillLabel" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 65.0
+offset_bottom = 26.0
+theme_override_font_sizes/font_size = 10
+text = "Max Kill :"
+
+[node name="KillValue" type="Label" parent="Control/KillLabel"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 52.0
+offset_right = 92.0
+offset_bottom = 16.0
+theme_override_font_sizes/font_size = 10
+text = "0"
+
+[node name="HighScoreLabel" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 25.0
+offset_right = 65.0
+offset_bottom = 41.0
+theme_override_font_sizes/font_size = 10
+text = "HighScore :"
+
+[node name="HighScoreValue" type="Label" parent="Control/HighScoreLabel"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 65.0
+offset_right = 105.0
+offset_bottom = 16.0
+theme_override_font_sizes/font_size = 10
+text = "0"
+
+[node name="VboxContainer" type="VBoxContainer" parent="Control"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -74.0
-offset_top = -15.0
-offset_right = 30.0
-offset_bottom = 43.0
+offset_left = -48.0
+offset_top = -48.0
+offset_right = 18.0
+offset_bottom = 48.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 5
-metadata/_edit_lock_ = true
 
-[node name="ButtonPlay" type="Button" parent="Control/VBoxContainer"]
+[node name="ButtonPlay" type="Button" parent="Control/VboxContainer"]
 texture_filter = 1
 layout_mode = 2
 theme = ExtResource("3_4uo84")
@@ -60,7 +94,7 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_h8c2w")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_h8c2w")
 text = "PLAY"
 
-[node name="ButtonSkin" type="Button" parent="Control/VBoxContainer"]
+[node name="ButtonSkin" type="Button" parent="Control/VboxContainer"]
 layout_mode = 2
 theme = ExtResource("3_4uo84")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -74,7 +108,22 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_j0xs7")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_j0xs7")
 text = "Skins"
 
-[node name="ButtonSettings" type="Button" parent="Control/VBoxContainer"]
+[node name="ButtonSettings" type="Button" parent="Control/VboxContainer"]
+layout_mode = 2
+theme = ExtResource("3_4uo84")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.639216, 0.698039, 0.741176, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_j0xs7")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_j0xs7")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_j0xs7")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_j0xs7")
+text = " Settings"
+
+[node name="ButtonCredits" type="Button" parent="Control/VboxContainer"]
 layout_mode = 2
 theme = ExtResource("3_4uo84")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -86,9 +135,9 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_j0xs7")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_j0xs7")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_j0xs7")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_j0xs7")
-text = "Settings"
+text = "Credits "
 
-[node name="ButtonCredits" type="Button" parent="Control/VBoxContainer"]
+[node name="ButtonQuit" type="Button" parent="Control/VboxContainer"]
 layout_mode = 2
 theme = ExtResource("3_4uo84")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -100,41 +149,10 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_j0xs7")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_j0xs7")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_j0xs7")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_j0xs7")
-text = "Credits"
+text = "Quit "
 
-[node name="ButtonQuit" type="Button" parent="Control/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("3_4uo84")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(0.639216, 0.698039, 0.741176, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
-theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_styles/normal = SubResource("StyleBoxEmpty_j0xs7")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_j0xs7")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_j0xs7")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_j0xs7")
-text = "Quit"
-
-[node name="HighscoreLabel" type="Label" parent="Control"]
-layout_mode = 0
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 65.0
-offset_bottom = 26.0
-theme_override_font_sizes/font_size = 10
-text = "Highscore :"
-
-[node name="HighscoreValue" type="Label" parent="Control/HighscoreLabel"]
-layout_mode = 0
-offset_left = 60.0
-offset_right = 100.0
-offset_bottom = 16.0
-theme_override_font_sizes/font_size = 10
-text = "0"
-
-[connection signal="pressed" from="Control/VBoxContainer/ButtonPlay" to="." method="_on_button_play_pressed"]
-[connection signal="pressed" from="Control/VBoxContainer/ButtonSkin" to="." method="_on_button_skin_pressed"]
-[connection signal="pressed" from="Control/VBoxContainer/ButtonSettings" to="." method="_on_button_settings_pressed"]
-[connection signal="pressed" from="Control/VBoxContainer/ButtonCredits" to="." method="_on_button_credits_pressed"]
-[connection signal="pressed" from="Control/VBoxContainer/ButtonQuit" to="." method="_on_button_quit_pressed"]
+[connection signal="pressed" from="Control/VboxContainer/ButtonPlay" to="." method="_on_button_play_pressed"]
+[connection signal="pressed" from="Control/VboxContainer/ButtonSkin" to="." method="_on_button_skin_pressed"]
+[connection signal="pressed" from="Control/VboxContainer/ButtonSettings" to="." method="_on_button_settings_pressed"]
+[connection signal="pressed" from="Control/VboxContainer/ButtonCredits" to="." method="_on_button_credits_pressed"]
+[connection signal="pressed" from="Control/VboxContainer/ButtonQuit" to="." method="_on_button_quit_pressed"]

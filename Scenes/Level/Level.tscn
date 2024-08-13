@@ -8,7 +8,7 @@
 [ext_resource type="Script" path="res://Scenes/Level/SpawnTimer.gd" id="6_x5pgc"]
 [ext_resource type="PackedScene" uid="uid://b10ayuw5xeyub" path="res://Scenes/HUD/In_Game/In_Game.tscn" id="7_6oodn"]
 [ext_resource type="PackedScene" uid="uid://b38pdekm3xh16" path="res://Scenes/HUD/Pause_Menu/Pause_Menu.tscn" id="8_x6s3t"]
-[ext_resource type="PackedScene" uid="uid://cu6nngbixjpn1" path="res://music.tscn" id="9_gdbam"]
+[ext_resource type="PackedScene" uid="uid://cu6nngbixjpn1" path="res://Scenes/Music/music.tscn" id="9_gdbam"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rq7ep"]
 

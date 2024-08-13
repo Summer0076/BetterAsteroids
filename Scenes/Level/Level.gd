@@ -82,6 +82,7 @@ func _on_retry_button_pressed() -> void:
 func _on_player_destroyed() -> void:
 	gameover.show()
 	in_game.stop_score_timer()
+	Global.update_Kill_score()
 	Global.update_high_score()
 	
 func _on_menu_button_pressed() -> void:

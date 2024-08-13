@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dxrc06cmo66hr"]
+[gd_scene load_steps=4 format=3 uid="uid://dxrc06cmo66hr"]
 
 [ext_resource type="Script" path="res://Scenes/Credits/Credits.gd" id="1_1m13l"]
 [ext_resource type="Texture2D" uid="uid://jravdqkg0scf" path="res://Textures/Screen/backround.png" id="1_3sdww"]
+[ext_resource type="Theme" uid="uid://bmr2n05mc6trg" path="res://Data/Button_Theme.tres" id="3_ys6fc"]
 
 [node name="Credits" type="Control"]
 layout_mode = 3
@@ -31,6 +32,7 @@ offset_right = -5.0
 offset_bottom = 29.0
 grow_horizontal = 0
 pivot_offset = Vector2(24, 12)
+theme = ExtResource("3_ys6fc")
 text = "Back"
 
 [node name="GodotLabel" type="Label" parent="TextureRect"]
@@ -105,13 +107,13 @@ offset_bottom = 38.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(141, 8)
-text = "Thanks to                       for the tuto"
+text = "Thanks to                        for the tuto"
 
 [node name="LinkButton" type="LinkButton" parent="TextureRect/GodotLabel/AutorLabel/ThanksAnsimuzLabel/BabaLabel"]
 layout_mode = 0
-offset_left = 81.0
+offset_left = 82.0
 offset_top = -1.0
-offset_right = 190.0
+offset_right = 191.0
 offset_bottom = 39.0
 text = "Baba des bois"
 uri = "https://babadesbois.com/index.html"

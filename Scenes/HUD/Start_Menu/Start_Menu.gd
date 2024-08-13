@@ -1,9 +1,8 @@
 extends Node
 
-@onready var highscore_value = $Control/HighscoreLabel/HighscoreValue
-
 func _ready():
-	highscore_value.text = str(Global.save_data.high_score)
+	%KillValue.text = str(Global.save_data.Kill)
+	%HighScoreValue.text = str(Global.save_data.high_score)
 	Global.reset_paused()
 
 	

@@ -1,6 +1,6 @@
 extends AudioStreamPlayer
 
-func _process(_delta):
+func _physics_process(delta):
 	volume_db = Global.Music_Volume
 
 

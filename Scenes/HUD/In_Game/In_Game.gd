@@ -1,4 +1,5 @@
 extends Control
+
 var Score = 0
 @export var Kill : int = 0
 
@@ -16,5 +17,7 @@ func _physics_process(_delta):
 
 func _on_timer_timeout():
 	Score += 1
+	Global.score = Score
+
 func stop_score_timer():
 	$ScoreTimer.stop()
