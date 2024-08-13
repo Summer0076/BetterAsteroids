@@ -13,9 +13,8 @@ config_version=5
 config/name="BetterAsteroids"
 run/main_scene="res://Scenes/HUD/Start_Menu/Start_Menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
-config/icon="res://Icons/Icon.png"
-config/macos_native_icon="res://Icons/Icon.icns"
-config/windows_native_icon="res://Icons/SmallIcon.ico"
+config/icon="res://Icons/Icon128.png"
+config/windows_native_icon="res://Icons/Icon128.ico"
 
 [autoload]
 
