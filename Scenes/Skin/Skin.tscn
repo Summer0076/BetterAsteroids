@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cipy81abrfx8q"]
+[gd_scene load_steps=22 format=3 uid="uid://cipy81abrfx8q"]
 
 [ext_resource type="Script" path="res://Scenes/Skin/Skin.gd" id="1_ip2qm"]
 [ext_resource type="Texture2D" uid="uid://cmywgy408iclb" path="res://Textures/Screen/Skin_Menu_V3.png" id="2_0ce8m"]
@@ -18,6 +18,8 @@
 [ext_resource type="Texture2D" uid="uid://cfdpfr6cq1ywx" path="res://Textures/Bullet/Bullet-d/bullet-d2.png" id="11_lkebn"]
 [ext_resource type="Texture2D" uid="uid://eknoohkk3g4c" path="res://Textures/Bullet/Bullet-d/bullet-d3.png" id="12_j62hc"]
 [ext_resource type="Texture2D" uid="uid://dg3orruehk4br" path="res://Textures/Bullet/Bullet-d/bullet-d4.png" id="13_h6ask"]
+[ext_resource type="Texture2D" uid="uid://5j4onso8eo0a" path="res://Textures/Bullet/Bullet-f/Bullet-f1.png" id="19_46sra"]
+[ext_resource type="Texture2D" uid="uid://dqbb4ba7bxpgj" path="res://Textures/Bullet/Bullet-f/Bullet-f2.png" id="20_8nst6"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3k6d5"]
 animations = [{
@@ -86,6 +88,17 @@ animations = [{
 }],
 "loop": true,
 "name": &"Bullet_e",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_46sra")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_8nst6")
+}],
+"loop": true,
+"name": &"Bullet_f",
 "speed": 10.0
 }]
 
@@ -185,7 +198,7 @@ layout_mode = 0
 offset_top = -30.0
 offset_right = 118.0
 offset_bottom = -6.0
-item_count = 5
+item_count = 6
 popup/item_0/text = "Bullet_a"
 popup/item_0/id = 0
 popup/item_1/text = "Bullet_b"
@@ -196,6 +209,8 @@ popup/item_3/text = "Bullet_d"
 popup/item_3/id = 3
 popup/item_4/text = "Bullet_e"
 popup/item_4/id = 4
+popup/item_5/text = "Bullet_f"
+popup/item_5/id = 5
 metadata/_edit_lock_ = true
 
 [node name="Sprite2D_Bullets" type="AnimatedSprite2D" parent="Background/Bullets/SelectBullet"]
@@ -203,7 +218,7 @@ unique_name_in_owner = true
 position = Vector2(59, -80)
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_3k6d5")
-animation = &"Bullet_e"
+animation = &"Bullet_f"
 autoplay = "Bullet_e"
 metadata/_edit_lock_ = true
 

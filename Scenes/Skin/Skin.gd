@@ -15,6 +15,7 @@ var skin_projectile_array = [
 	"Bullet_c",
 	"Bullet_d",
 	"Bullet_e",
+	"Bullet_f",
 ]
 
 func _ready():
